@@ -1,0 +1,61 @@
+"""user"""
+type UserModel {
+  id: ID!
+  firstName: String!
+  lastName: String!
+  email: String!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type ListUsersOutput {
+  users: [UserModel!]!
+  totalUsers: Int!
+}
+
+type Query {
+  getUser(id: String!): UserModel!
+  listUsers(input: ListUsersInput): ListUsersOutput!
+}
+
+input ListUsersInput {
+  limit: Int
+  offset: Int
+  filterBy: UsersFilterByInput
+  orderBy: UsersOrderByInput
+}
+
+input UsersFilterByInput {
+  firstName: String
+  lastName: String
+  email: String
+}
+
+input UsersOrderByInput {
+  firstName: String
+  lastName: String
+  email: String
+  createdAt: String
+}
+
+type Mutation {
+  createUser(input: CreateUserInput!): UserModel!
+  updateUser(input: UpdateUserInput!): UserModel!
+}
+
+input CreateUserInput {
+  firstName: String!
+  lastName: String!
+  email: String!
+}
+
+input UpdateUserInput {
+  firstName: String
+  lastName: String
+  id: String!
+}

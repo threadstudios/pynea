@@ -1,0 +1,25 @@
+spectaql:
+  displayAllServers: true
+
+introspection:
+  removeTrailingPeriodFromDescriptions: false
+  schemaFile: ./artifacts/schema.gql
+  queryNameStrategy: capitalizeFirst
+  fieldExpansionDepth: 2
+
+  spectaqlDirective:
+    enable: true
+
+extensions:
+  graphqlScalarExamples: true
+
+info:
+  title: Pynea Test GraphQL Docs
+  description: Automated docs for the GraphQL instance
+  contact:
+    name: Paul
+    email: paul@threadstud.io
+
+servers:
+  - url: https://localhost:3000/graphql
+    description: Local
