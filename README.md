@@ -12,6 +12,7 @@ My Application uses Nest.js as a framework with Fastify and then leans on both M
 - Run `npm install` at the root of the project.
 - Run `docker-compose up` to create a postgres DB via Docker.
 - Create a .env file (You should be able to clone .env.example)
+- Run `npx prisma migrate dev` to run the Prisma migration.
 - Run `npm run start` to start the application
 
 ## Documentation
